@@ -47,7 +47,7 @@ namespace Codyssey.Extensions
             var years = (3 * century / 4) - 12;
             var correction = (((8 * century) + 5) / 25) - 5; // synch with the Moon's orbit
 
-            var sunday = ((int)(5 * year / 4)) - years - 10;
+            var sunday = (5 * year / 4) - years - 10;
             var epact = ((11 * goldenNumber) + 20 + correction - years) % 30;
 
             var easterSunday = 44 - epact;
@@ -57,7 +57,7 @@ namespace Codyssey.Extensions
             }
 
             // advance to Sunday
-            easterSunday = easterSunday + 7 - (((int)(sunday + easterSunday)) % 7);
+            easterSunday = easterSunday + 7 - ((sunday + easterSunday) % 7);
             var easterMonth = 3; // March
             if (easterSunday > 31)
             {
