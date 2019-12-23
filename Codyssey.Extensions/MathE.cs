@@ -12,8 +12,8 @@ namespace Codyssey.Extensions
         /// <summary>
         /// Returns the value limited to the decimal count for comparison.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="decimalCount"></param>
+        /// <param name="value">The value to be truncated to the decimal count.</param>
+        /// <param name="decimalCount">The decimal digits to truncate to.</param>
         /// <returns>Fixed point value</returns>
         /// <remarks>Use this to retrieve comparable values</remarks>
         public static double Floor(double value, int decimalCount)
