@@ -5,7 +5,18 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codyssey.Extensions", "Codyssey.Extensions\Codyssey.Extensions.csproj", "{4B4704DD-68D1-4DDB-A3F9-40E426B9D87D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codyssey.Extensions.Tests", "Codyssey.Extensions.Tests\Codyssey.Extensions.Tests.csproj", "{11040721-7129-4A08-8450-4EC7987E72C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codyssey.Extensions.Tests", "Codyssey.Extensions.Tests\Codyssey.Extensions.Tests.csproj", "{11040721-7129-4A08-8450-4EC7987E72C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codyssey.Utils", "Codyssey.Utils\Codyssey.Utils.csproj", "{4C5D17DA-4764-4F08-9F3C-7A28311F8DD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codyssey.Utils.Tests", "Codyssey.Utils.Tests\Codyssey.Utils.Tests.csproj", "{1B8B1C76-E2A2-4B32-A1BE-698BE4D1E7FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CFA68FA6-6D5B-46F2-977D-7997636520BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{97050AC3-F2B8-47BE-9E83-78888B6D425A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +32,21 @@ Global
 		{11040721-7129-4A08-8450-4EC7987E72C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11040721-7129-4A08-8450-4EC7987E72C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11040721-7129-4A08-8450-4EC7987E72C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C5D17DA-4764-4F08-9F3C-7A28311F8DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C5D17DA-4764-4F08-9F3C-7A28311F8DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C5D17DA-4764-4F08-9F3C-7A28311F8DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C5D17DA-4764-4F08-9F3C-7A28311F8DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B8B1C76-E2A2-4B32-A1BE-698BE4D1E7FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B8B1C76-E2A2-4B32-A1BE-698BE4D1E7FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B8B1C76-E2A2-4B32-A1BE-698BE4D1E7FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B8B1C76-E2A2-4B32-A1BE-698BE4D1E7FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11040721-7129-4A08-8450-4EC7987E72C6} = {CFA68FA6-6D5B-46F2-977D-7997636520BB}
+		{1B8B1C76-E2A2-4B32-A1BE-698BE4D1E7FD} = {CFA68FA6-6D5B-46F2-977D-7997636520BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {947262A7-4523-4CBD-B496-4317F0DB91A3}
