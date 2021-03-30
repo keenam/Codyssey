@@ -27,5 +27,20 @@ namespace Codyssey.Utils.Tests
             Assert.Equal(rightExpected, needle.Select(bisect.Right).ToArray());
             Assert.Equal(leftExpected, needle.Select(bisect.Left).ToArray());
         }
+
+        [Fact]
+        public void TestReverse()
+        {
+            var haystack = new int[] { 100, 100, 99, 98, 97 };
+            var needle = new int[] { 100, 99, 98, 97 };
+
+            var leftExpected = new int[] { 0, 2, 3, 4 };
+            var rightExpected = new int[] { 2, 3, 4, 5};
+
+            var reverseComparer = Comparer<int>.Create((x, y) => y - x);
+            var bisect = new Bisect<int>(haystack, reverseComparer);
+            Assert.Equal(rightExpected, needle.Select(bisect.Right).ToArray());
+            Assert.Equal(leftExpected, needle.Select(bisect.Left).ToArray());
+        }
     }
 }

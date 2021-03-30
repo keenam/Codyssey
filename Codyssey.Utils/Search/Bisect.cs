@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Codyssey.Utils.Search
 {
@@ -24,7 +25,20 @@ namespace Codyssey.Utils.Search
 
         public int Left(T value)
         {
-            return this.GetInsertIndex(value, 0, this.items.Length - 1, this.median, InsertPosition.Before);
+            var insertIndex = Array.BinarySearch(items, value, comparer);
+            if (insertIndex < 0)
+            {
+                insertIndex = ~insertIndex;
+            }
+            else
+            {
+                for (insertIndex--; insertIndex >= 0 && comparer.Compare(value, items[insertIndex]) == 0; insertIndex--)
+                    ;
+
+                // we went left one step too far, bring back
+                insertIndex++;
+            }
+            return insertIndex;
         }
 
         /// <summary>
@@ -34,38 +48,16 @@ namespace Codyssey.Utils.Search
         /// <returns>The insertion point after an existing item. 0 if it's the first.</returns>
         public int Right(T value)
         {
-            return this.GetInsertIndex(value, 0, this.items.Length - 1, this.median, InsertPosition.After);
-        }
-
-        private int GetInsertIndex(T value, int left, int right, int compareIndex, InsertPosition insertAt)
-        {
-            if (compareIndex > right)
+            var insertIndex = Array.BinarySearch(items, value, comparer);
+            if (insertIndex < 0)
             {
-                // insert last
-                return right + 1;
+                insertIndex = ~insertIndex;
             }
-
-            if (compareIndex < left)
+            else
             {
-                // insert first
-                return left;
+                for (insertIndex++; insertIndex < items.Length && comparer.Compare(value, items[insertIndex]) == 0; insertIndex++) ;
             }
-
-            var result = comparer.Compare(this.items[compareIndex], value);
-            if (insertAt == InsertPosition.After && result == 0 || result < 0)
-            {
-                // find the bigger number than current
-                return this.GetInsertIndex(value, compareIndex + 1, right, compareIndex + (right - compareIndex) / 2 + 1, insertAt);
-            }
-
-            // the value is less than current item
-            return this.GetInsertIndex(value, left, compareIndex - 1, compareIndex - (compareIndex - left) / 2 - 1, insertAt);
-        }
-
-        enum InsertPosition
-        {
-            Before,
-            After
+            return insertIndex;
         }
     }
 }
