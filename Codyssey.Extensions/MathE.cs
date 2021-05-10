@@ -23,5 +23,13 @@ namespace Codyssey.Extensions
             var epsilon = Math.Pow(10, -decimalCount);
             return ((long)(value / epsilon)) * epsilon;
         }
+
+        /// <summary>
+        /// Returns the mid point of two values.
+        /// </summary>
+        public static int Mid(int x, int y)
+        {
+            return (x + y) >> 1;
+        }
     }
 }
