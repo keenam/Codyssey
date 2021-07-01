@@ -14,7 +14,7 @@ namespace Codyssey.Extensions
         /// <param name="decimalCount">The decimal digits to truncate to.</param>
         /// <returns>Fixed point value</returns>
         /// <remarks>Use this to retrieve comparable values</remarks>
-        public static double Floor(double value, int decimalCount)
+        public static double ToFixed(double value, int decimalCount)
         {
             if (decimalCount < 0 || decimalCount > 9)
             {

@@ -14,7 +14,7 @@ namespace Codyssey.Extensions.Tests
         [InlineData(2.145, 2, 2.14)]
         public void TestGetFixedPoint(double value, int fixedPoint, double expected)
         {
-            Assert.Equal(expected, MathE.Floor(value, fixedPoint));
+            Assert.Equal(expected, MathE.ToFixed(value, fixedPoint));
         }
 
         [Fact]
@@ -22,12 +22,12 @@ namespace Codyssey.Extensions.Tests
         {
             Assert.Throws<ArgumentException>(() =>
             {
-                MathE.Floor(1.23, -1);
+                MathE.ToFixed(1.23, -1);
             });
 
             Assert.Throws<ArgumentException>(() =>
             {
-                MathE.Floor(1.23, 10);
+                MathE.ToFixed(1.23, 10);
             });
         }
     }
