@@ -14,13 +14,11 @@ namespace Codyssey.Utils.Search
     {
         private readonly T[] items;
         private readonly IComparer<T> comparer;
-        private readonly int median;
 
         public Bisect(T[] items, IComparer<T> comparer)
         {
             this.items = items;
             this.comparer = comparer;
-            this.median = items.Length / 2;
         }
 
         public int Left(T value)
@@ -35,7 +33,7 @@ namespace Codyssey.Utils.Search
                 for (insertIndex--; insertIndex >= 0 && comparer.Compare(value, items[insertIndex]) == 0; insertIndex--)
                     ;
 
-                // we went left one step too far, bring back
+                // we went left one step too far, bring it back
                 insertIndex++;
             }
             return insertIndex;
@@ -55,7 +53,8 @@ namespace Codyssey.Utils.Search
             }
             else
             {
-                for (insertIndex++; insertIndex < items.Length && comparer.Compare(value, items[insertIndex]) == 0; insertIndex++) ;
+                for (insertIndex++; insertIndex < items.Length && comparer.Compare(value, items[insertIndex]) == 0; insertIndex++)
+                    ;
             }
             return insertIndex;
         }
