@@ -5,7 +5,7 @@ namespace Codyssey.Extensions
     /// <summary>
     /// Math extensions
     /// </summary>
-    public static class MathE
+    public static class MathExtensions
     {
         /// <summary>
         /// Returns the value limited to the decimal count for comparison.
