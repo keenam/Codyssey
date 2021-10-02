@@ -10,6 +10,8 @@ namespace Codyssey.Identity.Tests
 
         public ContextIdentityProviderTest()
         {
+            
+
             sqliteOptions = new DbContextOptionsBuilder<IdentityDbContext>()
                 .UseSqlite(@"Data source=.\test.db")
                 .Options;

@@ -2,7 +2,7 @@
 # instead of relying code-based EF
 # this gives is a full-control.
 
-$db_file_path = '..\test.db'
+$db_file_path = '.\test.db'
 
 function Get-Max {
   [CmdletBinding()]
