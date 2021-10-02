@@ -35,12 +35,6 @@ namespace Codyssey.Data.Tree
                 yield return Enumerable.Repeat(tree.Value, 1);
             }
 
-            if (tree.Value.Equals("y"))
-            {
-                var task = Task.Delay(5000);
-                task.Wait();
-            }
-
             foreach (var leaf in tree)
             {
                 foreach (var path in GetDfsPathTo(leaf, value))

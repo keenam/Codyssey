@@ -30,11 +30,11 @@ namespace Codyssey.Data.Tree.Tests
             var pathSearch = new TreePathQuery<string>(tree);
 
             var values = pathSearch.GetDfsPathTo("x");
-            //Assert.Collection(
-            //    values,
-            //    result => Assert.Equal(new string[] { "a", "2", "x" }, result),
-            //    result => Assert.Equal(new string[] { "a", "2", "y", "x" }, result)
-            //);
+            Assert.Collection(
+                values,
+                result => Assert.Equal(new string[] { "a", "2", "x" }, result),
+                result => Assert.Equal(new string[] { "a", "2", "y", "x" }, result)
+            );
 
             Assert.Collection(
                 values.Take(1),
